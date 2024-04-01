@@ -2,12 +2,13 @@
 
 # Pokedex App
 ## Descripción
-Esta aplicación de Pokedex está desarrollada con React y Vite, permitiendo a los usuarios explorar una amplia colección de información sobre Pokémon obtenida de la PokeAPI.
+Esta aplicación de Pokedex está desarrollada con React y Vite.
 
 ## Características
-Ver información detallada sobre diferentes Pokémon. -car Pokémon específicos por nombre o ID.
-Filtrar Pokémon por tipo, habilidades y más.
-Diseño responsive para una experiencia de usuario fluida en diversos dispositivos.
+- Ver todos los Pokemon disponibles. 
+- Busqueda de Pokemon por nombre.
+- Guardar los pokemon en una lista de Favoritos.
+- Diseño responsive para una experiencia de usuario fluida en diversos dispositivos.
 ## Tecnologías Utilizadas
 - React
 - Vite
@@ -35,8 +36,10 @@ npm run dev
 ```
    
 ## Uso
-Abr tu navegador e ir a http://localhost:5173 para acceder a la Pokedex. 2.avegar a través de los diferentes Pokémon, buscar Pokémon específicos y explorar sus detalles.
-¡Disfruta usando la aplicación de Pokedex y aprende más sobre tus Pokémon favoritos!
+1. Abrir tu navegador e ir a http://localhost:5173 para acceder a la Pokedex. 
+2. Navegar a través de los diferentes Pokémon, buscar Pokémon específicos y guardarlos.
+   
+¡Disfruta usando la aplicación de Pokedex!
 
 ## Preview
 
