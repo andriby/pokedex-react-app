@@ -11,7 +11,6 @@ const Home = () => {
     const [offset, setOffset] = useState(0);
     const [pokemonList, setPokemonList] = useState([]);
     const [filteredPokemonList, setFilteredPokemonList] = useState([]);
-    const [pokemonData, SetPokemonData] = useState('');
 
     const fetchAllPokemon = async () => {
         try {
@@ -19,15 +18,6 @@ const Home = () => {
             setPokemonList(response.data.results);
         } catch (error) {
             console.error('Error fetching Pokémon:', error);
-        }
-    };
-
-    const fetchPokemonData = async (url) => {
-        try {
-            const response = await axios.get(url);
-            SetPokemonData(response.data);
-        } catch (error) {
-            console.error('Error fetching Pokemon:', error);
         }
     };
 
@@ -83,17 +73,19 @@ const Home = () => {
                 {searchTerm === ''
                     ? pokemonList.slice(offset, offset + 12).map((pokemon, index) => (
                         <div key={index} className='col-6 col-sm-4 col-md-3 col-lg-2'>
-                            <Pokemon
-                                pokemon={pokemon}
-                                url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1 + offset}.png`}
-                                onClick={() => fetchPokemonData(pokemon.url)}
-                            />
+                            <Link to = {`/pokemon-details/${index + 1 + offset}`}>
+                                <Pokemon
+                                    pokemon={pokemon}
+                                    url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1 + offset}.png`}
+                                />
+                            </Link>
                         </div>
                     ))
                     : filteredPokemonList.map((pokemon, index) => (
                         <div key={index} className='col-6 col-sm-4 col-md-3 col-lg-2 position-relative'>
                             <Pokemon pokemon={pokemon} 
                             url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`}/>
+                            
                         </div>
                     ))}
             </div>
