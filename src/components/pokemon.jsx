@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../styles/index.css';
 
 const Pokemon = ({ pokemon, url, className = "" }) => {
@@ -51,10 +52,12 @@ const Pokemon = ({ pokemon, url, className = "" }) => {
                         </svg>
                     </div>
                 </div>
-                <img src={url} className="card-img-top" alt={pokemon.name} />
-                <div className="card-body">
-                    <h5 className="card-title text-uppercase text-center">{pokemon.name}</h5>
-                </div>
+                <Link to={`/pokemon-details/${pokemon.name}`}>
+                    <img src={url} className="card-img-top" alt={pokemon.name} />
+                    <div className="card-body">
+                        <h5 className="card-title text-uppercase text-center text-white">{pokemon.name}</h5>
+                    </div>
+                </Link>
             </div>
         </div>
     );

@@ -73,19 +73,16 @@ const Home = () => {
                 {searchTerm === ''
                     ? pokemonList.slice(offset, offset + 12).map((pokemon, index) => (
                         <div key={index} className='col-6 col-sm-4 col-md-3 col-lg-2'>
-                            <Link to = {`/pokemon-details/${index + 1 + offset}`}>
-                                <Pokemon
-                                    pokemon={pokemon}
-                                    url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1 + offset}.png`}
-                                />
-                            </Link>
+                            <Pokemon
+                                pokemon={pokemon}
+                                url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1 + offset}.png`}
+                            />
                         </div>
                     ))
                     : filteredPokemonList.map((pokemon, index) => (
                         <div key={index} className='col-6 col-sm-4 col-md-3 col-lg-2 position-relative'>
                             <Pokemon pokemon={pokemon} 
                             url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`}/>
-                            
                         </div>
                     ))}
             </div>
